@@ -1,0 +1,64 @@
+.location {
+  background: url(../img/loc.png) no-repeat;
+  /* height: 912px; */
+  color: white;
+  background-size: cover;
+  text-align: center;
+}
+
+.loc_content {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column: 173px;
+}
+.loc_content_card {
+  text-align: center;
+  margin-bottom: 35px;
+}
+.loc_content_card_title {
+  padding: 24px 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 48px;
+}
+.loc_content_card_text {
+  line-height: 30px;
+  font-size: 16px;
+}
+@media (min-width: 1440px) {
+  .location {
+    animation: scroll 50s linear infinite;
+    background: url(../img/loc.png);
+    height: 800px;
+  }
+  @keyframes scroll {
+    0% {
+      background-size: 100%;
+    }
+    50% {
+      background-size: 200%;
+    }
+    100% {
+      background-size: 100%;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1440px) {
+  .location {
+    max-height: 1701px;
+    background-size: cover;
+  }
+  .loc_content {
+    gap: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .location {
+    max-height: 1801px;
+  }
+  .loc_content {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+}

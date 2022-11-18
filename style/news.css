@@ -1,0 +1,138 @@
+.news_background {
+  max-height: 1213px;
+  background-color: #eee;
+  text-align: center;
+  padding-bottom: 30px;
+}
+/* background_gradient */
+
+/*
+.news_background {
+  animation: scroll 100s linear infinite;
+  background: url("https://fullhdoboi.ru/wp-content/uploads/_ph/22/801671103.jpg");
+  color: #eee;
+  height: 912px;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -3000px;
+  }
+}
+*/
+/* /background_gradient */
+.news_title {
+  text-align: center;
+}
+
+.news_title .lower_line {
+  border-bottom: 2px solid black;
+}
+.news_content {
+  margin-top: 48px;
+  display: grid;
+  column-gap: 32px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.news_card_title {
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000000;
+}
+/* Стили для текстового поля с кнопкой "Далее" */
+.limiter {
+  max-height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.limiter .bottom {
+  position: absolute; /* Если прыгает - можно попробовать sticky */
+  bottom: 0;
+  background: linear-gradient(to bottom, rgb(0 0 0 / 0%), #eee 90%);
+  width: 100%;
+  height: 50px;
+  opacity: 1;
+  transition: 0.3s;
+}
+/* скрывает элемент чекбокс */
+.read-more-checker,
+.read-more-checker-2,
+.read-more-checker-3 {
+  opacity: 0;
+  position: absolute;
+}
+
+.read-more-checker-3:checked ~ .limiter,
+.read-more-checker-2:checked ~ .limiter,
+.read-more-checker:checked ~ .limiter {
+  max-height: none;
+}
+
+.read-more-checker-3:checked ~ .limiter .bottom,
+.read-more-checker-2:checked ~ .limiter .bottom,
+.read-more-checker:checked ~ .limiter .bottom {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.read-more-checker-3 ~ .read-more-button:before,
+.read-more-checker-2 ~ .read-more-button:before,
+.read-more-checker ~ .read-more-button:before {
+  content: "-Raed more";
+}
+.read-more-checker-3:checked ~ .read-more-button:before,
+.read-more-checker-2:checked ~ .read-more-button:before,
+.read-more-checker:checked ~ .read-more-button:before {
+  content: "-collapse";
+}
+.read-more-button {
+  cursor: pointer;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .news_background {
+    max-height: 2611px;
+    background-color: #eee;
+  }
+  .news_content {
+    grid-template-columns: 1fr;
+  }
+
+  .news_card_img img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .news_background {
+    max-height: 2611px;
+    background-color: #eee;
+  }
+  .news_content {
+    grid-template-columns: 1fr;
+  }
+
+  .news_card_img img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .news_background {
+    max-height: 2611px;
+    background-color: #eee;
+  }
+  .news_content {
+    grid-template-columns: 1fr;
+  }
+
+  .news_card_img img {
+    width: 100%;
+  }
+}

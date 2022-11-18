@@ -1,0 +1,75 @@
+.reviews_wrapper {
+  background: url(../img/reviews.png) no-repeat;
+  height: 504px;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.reviews_text_author {
+  margin-top: 30px;
+}
+/* carusel */
+.reviews_slider {
+  margin-top: 48px;
+}
+.content_text {
+  margin: 0 20px;
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #717171;
+  border: 2px solid #717171;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .reviews_wrapper {
+    height: 527px;
+    background: url(../img/review_768.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: left 30% top 50%;
+  }
+}
+@media (max-width: 768px) {
+  .reviews_wrapper {
+    max-height: 407px;
+    background: url(../img/review_768.png) no-repeat;
+    background-size: 150% 100%;
+    background-position: left 40% top 50%;
+  }
+}
